@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="ScreenPop Gadget"
+        description="ScreenPop Gadget">
+
+        <Require feature="settitle" />
+        <Require feature="dynamic-height" />
+        <Require feature="pubsub-2" />
+    	<Require feature="setprefs" />
+        <Require feature="loadingindicator">
+            <Param name="manual-dismiss">false</Param>
+            <Param name="loading-timeout">10</Param>
+        </Require>
+    </ModulePrefs>
+
+    <Content type="html">
+        <![CDATA[
+        	<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>Cisco Finesse</title>
+<!-- Styling -->
+<link rel="stylesheet" href="customGadget.css" type="text/css" />
+
+<!-- jQuery -->
+<script type="text/javascript" src="/desktop/assets/js/jquery.min.js"></script>
+
+<!-- Finesse Library -->
+<script type="text/javascript" src="/desktop/assets/js/finesse.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<div class="logo_wrap">
+		<a class="logo"><img src="https://images.ctfassets.net/fikanzmkdlqn/3yUnySNpS8IS4CeyUeWgeg/5bcfa9c592acfe591f26d85f6820fa5f/Logo_TELUS.svg"/></a>
+	</div>	
+	<div class="portal-panel-wrapper manual_search">
+		<div class="flexbox">
+			<div class="flex">
+				<div>306: John, Doe (Completed) 03/08/2018 2:47:08 PM Out : 9-1-000-000-0000 Duration: 00:00:50 Held: 00:00:00</div>
+				<div class="form-group form-inline">
+					<input type="text" placeholder=""  class="form-control" />
+					<button class="btn btn-primary">Search</button>
+					<label class="input-inline"><input type="checkbox" /> Include InActive </label>
+				</div>
+			</div>
+			<div class="flex">
+				<div class="btn-group">
+					<button class="btn btn-primary">Close</button>
+					<button class="btn btn-default">Current Call</button>
+				</div>
+				<div>123789456123123456789 | 3065Main</div>
+			</div>
+		</div>
+	</div>
+	<div class="info_wrapper">
+		<div class="flexbox">
+			<div class="flex">
+				<ul class='tabs'>
+					<li><a href='#tab1'>Information</a></li>
+					<li><a href='#tab2'>EPIC</a></li>
+					<li><a href='#tab3'>Activity</a></li>
+				</ul>
+				<div id='tab1' class="tabs-details">
+					<div class="info_tab_wrap">
+					
+					</div>
+				</div>
+				<div id='tab2' class="tabs-details">
+					<div class="info_tab_wrap">
+							<Fieldset>
+									<legend>Customer</legend>
+									<div class="customer_info_wrap">
+										<div class="flexbox">
+											<div class="flex">Lookup Code :</div>
+											<div class="flex">QUINIOUH01</div>
+										</div>
+										<div class="flexbox">
+											<div class="flex">Account Name :</div>
+											<div class="flex">Henri Quiniou</div>
+										</div>
+										<div class="flexbox">
+											<div class="flex">Address :</div>
+											<div class="flex">630 Boul, Rnen-Levesque Ouest <br>Montreal<br>QC CAN H3B1S6</div>
+										</div>
+										<div class="flexbox">
+											<div class="flex">Phone :</div>
+											<div class="flex">4000000000<br>(Obtained)</div>
+										</div>
+										<div class="btn-group">
+											<button class="btn btn-primary">Confirm</button>
+											<button class="btn btn-primary">Pop</button>
+										</div>
+									</div>
+								</Fieldset>
+								<Fieldset>
+									<ul class="nav-pills">
+										<li><a>AUTO0001</a></li>
+										<li><a>AUTO0001</a></li>
+										<li><a>AUTO0001</a></li>
+									</ul>
+								</Fieldset>
+								<Fieldset>
+									<legend>Policy</legend>
+									<div class="customer_info_wrap">
+										<div class="flexbox">
+											<div class="flex">Type :</div>
+											<div class="flex">Homeowners</div>
+										</div>
+										<div class="flexbox">
+											<div class="flex">Term :</div>
+											<div class="flex">06/12/2017 - 06/12/2018</div>
+										</div>
+										<div class="btn-group">
+											<button class="btn btn-primary">Confirm</button>
+										</div>
+									</div>
+								</Fieldset>
+								<Fieldset>
+									<legend>Servicing Contacts</legend>
+								</Fieldset>
+					</div>
+				</div>
+				<div id='tab3' class="tabs-details">
+					<div class="info_tab_wrap">
+						<div class="form-group">
+							<select class="form-control">
+								<option>Added HOME Policy</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Activity Code</label>
+							<select class="form-control">
+								<option>APOL - Added Policy</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Follow Up Date</label>
+							<input type="text" class="form-control" id="datepicker">
+						</div>
+						<div class="form-group">
+							<label class="form-label">Assign To</label>
+							<select class="form-control">
+								<option>John Doe</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Description</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-group">
+							<label class="form-label">Activity</label>
+							<textarea class="form-control" rows="4"></textarea>
+						</div>
+						<div class="btn-group">
+								<button class="btn btn-default">Close</button>
+								<button class="btn btn-primary">Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex">
+				<div class="policy_info_wrapper">
+					<ul class="nav-pills pills">
+						<li><a class="active">Start</a></li>
+						<li><a>Policy Change</a></li>
+						<li><a>Policy Renewal</a></li>
+						<li><a>New Policy</a></li>
+						<li><a>Cancle</a></li>
+						<li><a>Wrap-up</a></li>
+						<li><a>Definitions</a></li>
+					</ul>
+					<div class="policy_info"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="quick_actions_wraper portal-panel-wrapper">
+		<ul class="nav-pills">
+			<li><a class="active">Audio Signature</a></li>
+			<li><a>Billing</a></li>
+			<li><a>Cancle (Other)</a></li>
+			<li><a>Cancle (Price)</a></li>
+			<li><a>Cancle (Services)</a></li>
+			<li><a>Cancellation</a></li>
+			<li><a>Certificate</a></li>
+			<li><a class="active">Change</a></li>
+			<li><a>Claim</a></li>
+			<li><a>Confirmation of Coverage Letters</a></li>
+			<li><a>CONSENTEMENT - Automobile</a></li>
+			<li><a>Coverage Enquiry</a></li>
+			<li><a>Cross Sell</a></li>
+			<li><a>Debtor Contact</a></li>
+			<li><a>Lead</a></li>
+			<li><a>Leave of Absence Rules</a></li>
+			<li><a>Life Insurance</a></li>
+			<li><a>New</a></li>
+			<li><a>New Policy</a></li>
+			<li><a>Office PKG</a></li>
+			<li><a class="active">Other</a></li>
+			<li><a>Payment Methods</a></li>
+		</ul>
+	</div>
+	<div class="recording_tbl_wraper portal-panel-wrapper">
+		<table cellpadding="0" cellspacing="0" width="100%" border="0">
+			<thead>
+				<tr>
+					<th>Play</th>
+					<th>Formatted Digits</th>
+					<th>Start Time</th>
+					<th>Duration</th>
+					<th>Name</th>
+					<th>Tags</th>
+					<th>Customer#</th>
+					<th>Policy#</th>
+					<th>Customer Type</th>
+					<th>Subject</th>
+					<th>Comments</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>9-1-000-000-0000</td>
+					<td>02/28/2015 10:01:08 AM</td>
+					<td>00:00:48</td>
+					<td>John Doe</td>
+					<td>Coverage Enquiry, Upsell, Audio Signature</td>
+					<td>John</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="recorder_wraper portal-panel-wrapper">
+			<h3>Audio Recorder will be here</h3>
+	</div>
+
+
+	
+	<div class="pop_up_wrapper" id="device_add_popup">
+		<div class="popup_container">
+			<div class="popup_header">
+				Find your device address
+				<a class="popup_close_icon popup_close" >&times</a>
+			</div>
+			<div class="popup_body">
+				Device address information will be here.
+			</div>
+			<div class="popup_footer">
+				<button type="button" class="btn btn-primary popup_close">OK</button>
+			</div>
+		</div>
+		<div class="backdrop"></div>
+	</div>
+	<!-- Gadget Business Logic -->
+	<script type="text/javascript" src="customGadget.js"></script>
+
+</body>
+</html>
+        ]]>
+    </Content>
+</Module>
