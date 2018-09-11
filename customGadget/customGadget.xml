@@ -259,6 +259,13 @@
 		</div>
 		<div class="backdrop"></div>
 	</div>
+	<script type="text/javascript">
+      function makeRequest(){
+            //dynamically resize the view height to the new content height
+            gadgets.window.adjustHeight();
+         });
+      }
+      </script>
 	<!-- Gadget Business Logic -->
 	<script type="text/javascript" src="customGadget.js"></script>
 
