@@ -367,11 +367,11 @@ textarea.form-control {
     width: 40%;
 }
 .info_wrapper .flexbox .flex:last-child {
-    padding-left:20px;
-    width: 60%;
+    
+    
 }
 .info_tab_wrap {
-    height: 400px;
+    
     overflow: auto;
     padding-top: 0px;
 }
@@ -398,7 +398,7 @@ fieldset legend {
     margin:5px 0;
 }
 .customer_info_wrap .flexbox .flex:first-child{
-    width: 150px;
+    width: 200px;
     font-weight: 600;
 }
 .policy_info_wrapper .nav-pills {
@@ -414,6 +414,8 @@ fieldset legend {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 0;
+    width:40%;
+    margin-left:0;
 }
 .quick_actions_wraper .nav-pills {
     padding-bottom: 0;
