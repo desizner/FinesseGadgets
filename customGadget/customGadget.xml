@@ -32,6 +32,8 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Gadget Business Logic -->
+            <script type="text/javascript" src="ScreenPop.js"></script>
 </head>
 <body>
 	<div class="logo_wrap">
@@ -66,7 +68,7 @@
 				</ul>
 				<div id='tab1' class="tabs-details">
 					<div class="info_tab_wrap">
-					
+						<div id="agentout">
 					</div>
 				</div>
 				<div id='tab2' class="tabs-details">
@@ -259,6 +261,12 @@
 		</div>
 		<div class="backdrop"></div>
 	</div>
+	<script type="text/javascript">
+                // initialize the gadget running the init handler defined in screenpop.js
+                gadgets.HubSettings.onConnect = function () {
+                    finesse.modules.SampleGadget.init();
+                };
+            </script>
 	<script type="text/javascript">
       function makeRequest(){
             //dynamically resize the view height to the new content height
