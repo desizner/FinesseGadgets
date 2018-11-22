@@ -30,7 +30,7 @@ finesse.modules.SampleGadget = (function ($) {
             
             // comment out the above line and uncomment the line below to change the search engine to bing
             // Note: google search won't allow an iframe, yahoo search has errors too
-            html += callvars["callVariable1"];
+            html += '<div class="flexbox"><div class="flex">Customer Name:</div><div class="flex">'+callvars["callVariable1"]+'</div></div><div class="flexbox"><div class="flex">CallQueue :</div><div class="flex">'+callvars["queueName"]+'</div></div>';
         
             // add the closing </div> html element
         
@@ -43,7 +43,7 @@ finesse.modules.SampleGadget = (function ($) {
             gadgets.window.adjustHeight();
         } else {
             // we don't have a call yet
-            html += 'Screen Pop Goes here';
+            html += '';
                 
             //set the html document's agentout element to the html we want to render
             $('#agentout').html(html);
