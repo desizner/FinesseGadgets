@@ -447,3 +447,6 @@ fieldset legend {
 .info_tab_wrap .form-group .form-label {
     display: block;
 }
+#recieved {
+    display:none;
+}

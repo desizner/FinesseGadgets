@@ -10,17 +10,18 @@ finesse.modules.SampleGadget = (function ($) {
     var callvars = new Array();  // the callvars array of callvariables     
     var user, states, dialogs, clientLogs,
     
-    /**
-     * Populates the fields in the gadget with data
-     */
+
     render = function () {
         var currentState = user.getState();
         // html is initially a div tag
         var html = '<div>';
             
-        // for debugging you could print out the agent state and the number of calls (Dialogs)
-        //html += '<div id="agentstate"> The current state is: ' + user.getState() + '</div>';
-        //html += '<div id="dialogcount"> The number of dialogs is: ' + numDialogs + '</div>';
+        //for debugging you could print out the agent state and the number of calls (Dialogs)
+        html += '<div id="agentstate"> The current state is: ' + user.getState() + '</div>';
+        html += '<div id="dialogcount"> The number of dialogs is: ' + numDialogs + '</div>';
+        console.log(currentState);
+        console.log(numDialogs);
+        console.log(callvars);
         
         if (numDialogs==1) {
             // if we were triggered by a new call (numDialogs==1) then set the html to the url we want to pop in the iframe
@@ -29,10 +30,9 @@ finesse.modules.SampleGadget = (function ($) {
             
             // comment out the above line and uncomment the line below to change the search engine to bing
             // Note: google search won't allow an iframe, yahoo search has errors too
-            html += '<iframe src="https://www.bing.com/search?q=' + callvars["callVariable1"] +  '" width="100%" height="650"> </iframe>';
+            html += callvars["callVariable1"];
         
             // add the closing </div> html element
-            html += '</div>';
         
             clientLogs.log("render(): HTML is: " + html);  // for debugging
             
@@ -44,7 +44,6 @@ finesse.modules.SampleGadget = (function ($) {
         } else {
             // we don't have a call yet
             html += 'Screen Pop Goes here';
-            html += '</div>';
                 
             //set the html document's agentout element to the html we want to render
             $('#agentout').html(html);
